@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Lemaj - {{ title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/styles/main.css">
+  </head>
+  <body>
+    {{> nav}}
+    <div id="main-section">
+      {{~> page}}
+    </div>
+    <div id="main-footer">
+      {{> footer}}
+    </div>
+    <script src="/static/scripts/main.js"></script>
+  </body>
+</html>

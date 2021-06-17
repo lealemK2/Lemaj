@@ -1,0 +1,10 @@
+#main-section {
+    width: 80%;
+    margin: auto;
+}
+
+#main-footer {
+    position:absolute;
+    width:100%;
+    bottom:0px;
+}
