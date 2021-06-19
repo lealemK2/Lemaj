@@ -1,6 +1,6 @@
 use rocket::fairing::AdHoc;
 use rocket::serde::Serialize;
-use rocket_dyn_templates::{Template};
+use rocket_dyn_templates::Template;
 
 #[derive(Serialize)]
 #[serde(crate = "rocket::serde")]
@@ -13,12 +13,15 @@ struct TemplateContext<'r> {
 
 #[get("/")]
 fn index() -> Template {
-    Template::render("home/index", &TemplateContext {
-        title: "Hello",
-        name: Some("Test"),
-        items: vec!["One", "Two", "Three"],
-        parent: "layout",
-    })
+    Template::render(
+        "home/index",
+        &TemplateContext {
+            title: "Hello",
+            name: Some("Test"),
+            items: vec!["One", "Two", "Three"],
+            parent: "layout",
+        },
+    )
 }
 
 #[get("/about")]

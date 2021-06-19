@@ -67,15 +67,15 @@ pub async fn update_account(db: &Db, account: Account, id: i32) -> Result<(), Po
     let stmt = client
         .prepare("UPDATE accounts SET firstname = $1, lastname = $2 WHERE id = $3")
         .await?;
-    client.query(&stmt, &[&account.firstname, &account.lastname, &id]).await?;
+    client
+        .query(&stmt, &[&account.firstname, &account.lastname, &id])
+        .await?;
     Ok(())
 }
 
 pub async fn delete_account(db: &Db, id: i32) -> Result<(), PoolError> {
     let client: Client = db.get().await?;
-    let stmt = client
-        .prepare("DELETE FROM accounts WHERE id = $1")
-        .await?;
+    let stmt = client.prepare("DELETE FROM accounts WHERE id = $1").await?;
     client.query(&stmt, &[&id]).await?;
     Ok(())
 }
