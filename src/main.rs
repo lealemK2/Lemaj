@@ -1,13 +1,16 @@
 #[macro_use]
+extern crate dotenv_codegen;
+#[macro_use]
 extern crate rocket;
-
 use rocket::fs::FileServer;
 use rocket::response::Redirect;
 use rocket_dyn_templates::{handlebars, Template};
 
 use self::handlebars::{Handlebars, JsonRender};
 
+mod database;
 mod routes;
+mod models;
 
 #[get("/favicon.ico")]
 fn favicon() -> Redirect {
@@ -37,9 +40,11 @@ fn customize(hbs: &mut Handlebars) {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
+        .attach(database::db::stage())
         .mount("/static", FileServer::from("static"))
-        .mount( "/", routes![favicon])
+        .mount("/", routes![favicon])
         .attach(routes::home::stage())
+        .attach(routes::accounts::stage())
         .attach(Template::custom(|engines| {
             customize(&mut engines.handlebars);
         }))
