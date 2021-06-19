@@ -3,6 +3,7 @@
 ```
 Development on Lemaj has just started. Everything is in flux
 ```
+
 ## What is Lemaj?
 
 __Lemaj__ aspires to be a website for learning programming, it will have weekly contests where any one can compete. We believe the best way to learn programming is by writing code and __Lemaj__ aims to help in providing a platform to do just that. Think of it as [Leetcode](https://leetcode.com) or [Codeforces](https://codeforces.com) but aimed at beginners and Ethiopian programmers. __Lemaj__ will try to remove barriers to entry as much as possible. The word __Lemaj__ means trainee in [Amharic](https://en.wikipedia.org/wiki/Amharic) and it is written as `ለማጅ`. If you have an idea on how to improve __Lemaj__ please edit the section below (`Ideas on how to improve`) to add what you think and submit a merge request.
@@ -14,6 +15,7 @@ __Lemaj__ aspires to be a website for learning programming, it will have weekly 
 - Enable companies with interviewing process
 - Organize meet-ups and events, include competetion and prizes
 - Tutorials and courses
+- Add a "JSON api" for folks who might want to build a mobile app or maybe a better client
 
 ## Software used to build the website
 
