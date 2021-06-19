@@ -8,3 +8,11 @@
     width:100%;
     bottom:0px;
 }
+
+.centered-children {
+    text-align: center;
+}
+
+.bigfont {
+    font-size: 6rem;
+}

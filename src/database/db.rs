@@ -1,6 +1,6 @@
-use rocket::{Rocket, Build};
-use rocket::fairing::{self, AdHoc};
 use dotenv::dotenv;
+use rocket::fairing::{self, AdHoc};
+use rocket::{Build, Rocket};
 use serde::Deserialize;
 use tokio_postgres::NoTls;
 
@@ -8,7 +8,7 @@ pub type Db = deadpool_postgres::Pool;
 
 #[derive(Debug, Deserialize)]
 struct Config {
-    pg: deadpool_postgres::Config
+    pg: deadpool_postgres::Config,
 }
 
 impl Config {
@@ -36,7 +36,6 @@ async fn init_db(rocket: Rocket<Build>) -> fairing::Result {
 
 pub fn stage() -> AdHoc {
     AdHoc::on_ignite("Database Stage", |rocket| async {
-        rocket
-            .attach(AdHoc::try_on_ignite("Database", init_db))
+        rocket.attach(AdHoc::try_on_ignite("Database", init_db))
     })
 }

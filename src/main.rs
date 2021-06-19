@@ -4,7 +4,7 @@ extern crate dotenv_codegen;
 extern crate rocket;
 use rocket::fs::FileServer;
 use rocket::response::Redirect;
-use rocket_dyn_templates::{Template};
+use rocket_dyn_templates::Template;
 
 mod database;
 mod models;
@@ -21,6 +21,7 @@ fn rocket() -> _ {
         .attach(database::db::stage())
         .mount("/static", FileServer::from("static"))
         .mount("/", routes![favicon])
+        .attach(routes::errors::stage())
         .attach(routes::home::stage())
         .attach(routes::accounts::stage())
         .attach(Template::custom(|_| {}))
