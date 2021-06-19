@@ -5,9 +5,6 @@
 - [X] Choose web framework - [Rocket](https://rocket.rs "Rocket is a web framework")
 - [X] Choose database - [PostgreSQL](https://www.postgresql.org "PostgreSQL Database")
 - [X] Choose templating langauge - [Handlebars](https://handlebarsjs.com "Handlebars - Minimal templating on steroids")
-- [X] Decide whether to use ORM and code first approach - Decision _use_
-- [X] Choose ORM - [Diesel](https://diesel.rs "Diesel ORM")
-- [ ] Containerize using [Docker](https://www.docker.com "Docker")
 
 ## Database
 - [ ] Design and add Account Model (assuming [MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller "MVC Design Pattern"))
@@ -26,7 +23,7 @@
 - [X] Add section on technology stack to `README.md`
 - [X] Add how to install section to `README.md`
 - [ ] Add a landing page
-- [ ] Implement CRUD for Account
+- [X] Implement CRUD for Account
 - [ ] Implement log in and session management
 - [ ] Define what a `contest` is
 - [ ] Define `source_code` submission process

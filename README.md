@@ -18,7 +18,7 @@ __Lemaj__ aspires to be a website for learning programming, it will have weekly 
 ## Software used to build the website
 
 - [Rust](https://www.rust-lang.org "Rust programming language") is the back-end programming language and we use [Rocket](https://rocket.rs) web framework.
-- The database is [PostgreSQL](https://www.postgresql.org "PostgreSQL Database") and we use [Diesel_CLI](https://github.com/diesel-rs/diesel/tree/master/diesel_cli) ORM.
+- The database is [PostgreSQL](https://www.postgresql.org "PostgreSQL Database").
 - `HTML`, `CSS` and `Javascript` are the front-end programming languages.
 The tools used to build the website are available for all major operating systems. 
 
@@ -27,25 +27,14 @@ The tools used to build the website are available for all major operating system
 ### Install dependencies
 
 Install Rust programming language, you can get it [here](https://www.rust-lang.org/tools/install).
-Install PostgreSQL database, you can get it [here](https://www.postgresql.org/download). Create a role `lemaj` with password `lemajpass`. Database role/password will be moved out of the repo in the future.
-Install Diesel CLI, you can get it here [here](https://crates.io/crates/diesel_cli). For this project we need the `postgres` feature. So use:
-```shell
-$ cargo install diesel_cli --no-default-features --features postgres
+Install PostgreSQL database, you can get it [here](https://www.postgresql.org/download).
+Add environment variables, you can use `.env` file. It could look like
 ```
-Add an environment variable `DATABASE_URL` with value of the database url. You can also use `.env` file:
-```shell
-$ echo DATABASE_URL=postgres://lemaj:lemajpass@localhost:5432/lemaj_dev > .env
-```
-
-### If you face linking errors while installing `diesel cli`:
-#### Windows
-Add an environment variable `PQ_LIB_DIR` and set it's value to the path to `postgres`'s lib folder (e.g. `C:\Program Files\PostgreSQL\13\lib`). You might also need to add `postgres`'s bin folder to your `Path` if you haven't already
-
-#### Linux (Ubuntu)
-Try installing `libpq-dev`
-
-```shell
-$ sudo apt-get install libpq-dev
+PG__DBNAME=lemaj_dev
+PG__USER=lemaj
+PG__PASSWORD=lemajpass
+PG__HOST=localhost
+MAX_PAGE_SIZE=50
 ```
 
 ## Contribution

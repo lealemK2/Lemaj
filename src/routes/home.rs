@@ -30,7 +30,7 @@ fn about() -> Template {
 }
 
 pub fn stage() -> AdHoc {
-    AdHoc::on_ignite("Diesel SQLite Stage", |rocket| async {
+    AdHoc::on_ignite("Home Stage", |rocket| async {
         rocket.mount("/", routes![index, about])
     })
 }
